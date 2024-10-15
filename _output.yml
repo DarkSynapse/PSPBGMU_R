@@ -1,0 +1,10 @@
+bookdown::gitbook:
+  css: style.css
+  config:
+    toc:
+      before: |
+        <li><a href="./">АНАЛИЗ БИОИНФОРМАЦИИ НА ЯЗЫКЕ R</a></li>
+      after: |
+        <li><a href="https://github.com/rstudio/bookdown" target="blank">Опубликовано с bookdown</a></li>
+        <li><a href="https://www.1spbgmu.ru/" target="blank">Сайт ПСПбГМУ</a></li>
+      
