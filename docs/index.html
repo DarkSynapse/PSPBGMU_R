@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>АНАЛИЗ БИОИНФОРМАЦИИ НА ЯЗЫКЕ R.</title>
+  <meta name="description" content="АНАЛИЗ БИОИНФОРМАЦИИ НА ЯЗЫКЕ R." />
+  <meta name="generator" content="bookdown 0.38 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="АНАЛИЗ БИОИНФОРМАЦИИ НА ЯЗЫКЕ R." />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="АНАЛИЗ БИОИНФОРМАЦИИ НА ЯЗЫКЕ R." />
+  
+  
+  
+
+<meta name="author" content="М.Л. Никонорова, А.В. Тишков, Н.П. Волков." />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+<link rel="next" href="среда-r.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">АНАЛИЗ БИОИНФОРМАЦИИ НА ЯЗЫКЕ R</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Об издании</a></li>
+<li class="chapter" data-level="2" data-path="среда-r.html"><a href="среда-r.html"><i class="fa fa-check"></i><b>2</b> Среда R</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="среда-r.html"><a href="среда-r.html#windows"><i class="fa fa-check"></i><b>2.1</b> Windows</a></li>
+<li class="chapter" data-level="2.2" data-path="среда-r.html"><a href="среда-r.html#macos"><i class="fa fa-check"></i><b>2.2</b> macOS</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="подключение-пактов-библиотек.html"><a href="подключение-пактов-библиотек.html"><i class="fa fa-check"></i><b>3</b> Подключение пактов (библиотек)</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Опубликовано с bookdown</a></li>
+<li><a href="https://www.1spbgmu.ru/" target="blank">Сайт ПСПбГМУ</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">АНАЛИЗ БИОИНФОРМАЦИИ НА ЯЗЫКЕ R.</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">АНАЛИЗ БИОИНФОРМАЦИИ НА ЯЗЫКЕ R.</h1>
+<p class="author"><em>М.Л. Никонорова, А.В. Тишков, Н.П. Волков.</em></p>
+</div>
+<div id="об-издании" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">1</span> Об издании<a href="index.html#об-издании" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>УДК</p>
+<p>ББК</p>
+<p>            М</p>
+<p>            А в т о р ы :</p>
+<p>            Р е ц е н з е н т :</p>
+<p><em>Утверждено на заседании ЦМК по медико–биологическим</em></p>
+<p><em>и медико–профилактическим дисциплинам</em></p>
+<p><em>ФГБОУ ВО ПСПбГМУ им. И.П. Павлова.</em></p>
+<p><em>Протокол № ….. от …………….. 2024 г.</em></p>
+<p>            Анализ биоинформации на языке R.
+Пакеты {dplyr}, {ggplot2}, {meta} : учебное пособие / М.Л.
+Никонорова, А.В.
+Тишков, Н.С.
+Волков.
+– СПб.: РИЦ ПСПбГМУ, 2024.
+….
+с.</p>
+<p>            ISBN</p>
+<p>            В данном учебном пособие рассмотрены типы данных в языке программирования R, этапы проведения мета-анализа как части систематического обзора, методические рекомендации по проведению мета-анализа на языке программирования R.</p>
+<p>            Учебное пособие предназначено для студентов лечебного, стоматологического, педиатрического факультетов и факультета клинической психологии, для студентов цифровой кафедры.
+Пособие может быть полезно клиническим ординаторам и аспирантам при статистической обработке большого объема информации, представления обобщенных клинических данных и их статистического анализа.</p>
+<p>ISBN</p>
+<p>©</p>
+<p>© РИЦ ПСПбГМУ, 2024</p>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="среда-r.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/YOUR GITHUB USERNAME/YOUR REPO NAME/edit/main/index.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/YOUR GITHUB USERNAME/YOUR REPO NAME/blob/main/index.Rmd",
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
