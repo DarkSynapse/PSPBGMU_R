@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>АНАЛИЗ БИОИНФОРМАЦИИ НА ЯЗЫКЕ R.</title>
-  <meta name="description" content="АНАЛИЗ БИОИНФОРМАЦИИ НА ЯЗЫКЕ R." />
+  <title>4 Стат пакет в R | АНАЛИЗ БИОИНФОРМАЦИИ НА ЯЗЫКЕ R.</title>
+  <meta name="description" content="4 Стат пакет в R | АНАЛИЗ БИОИНФОРМАЦИИ НА ЯЗЫКЕ R." />
   <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="АНАЛИЗ БИОИНФОРМАЦИИ НА ЯЗЫКЕ R." />
+  <meta property="og:title" content="4 Стат пакет в R | АНАЛИЗ БИОИНФОРМАЦИИ НА ЯЗЫКЕ R." />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="АНАЛИЗ БИОИНФОРМАЦИИ НА ЯЗЫКЕ R." />
+  <meta name="twitter:title" content="4 Стат пакет в R | АНАЛИЗ БИОИНФОРМАЦИИ НА ЯЗЫКЕ R." />
   
   
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
+<link rel="prev" href="подключение-пактов-библиотек.html"/>
 
-<link rel="next" href="среда-r.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -107,45 +107,36 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">АНАЛИЗ БИОИНФОРМАЦИИ НА ЯЗЫКЕ R.</h1>
-<p class="author"><em>М.Л. Никонорова, А.В. Тишков, Н.П. Волков.</em></p>
-</div>
-<div id="об-издании" class="section level1 hasAnchor" number="1">
-<h1><span class="header-section-number">1</span> Об издании<a href="index.html#об-издании" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>УДК</p>
-<p>ББК</p>
-<p>            М</p>
-<p>            А в т о р ы :</p>
-<p>            Р е ц е н з е н т :</p>
-<p><em>Утверждено на заседании ЦМК по медико–биологическим</em></p>
-<p><em>и медико–профилактическим дисциплинам</em></p>
-<p><em>ФГБОУ ВО ПСПбГМУ им. И.П. Павлова.</em></p>
-<p><em>Протокол № ….. от …………….. 2024 г.</em></p>
-<p>            Анализ биоинформации на языке R.
-Пакеты {dplyr}, {ggplot2}, {meta} : учебное пособие / М.Л.
-Никонорова, А.В.
-Тишков, Н.С.
-Волков.
-– СПб.: РИЦ ПСПбГМУ, 2024.
-….
-с.</p>
-<p>            ISBN</p>
-<p>            В данном учебном пособие рассмотрены типы данных в языке программирования R, этапы проведения мета-анализа как части систематического обзора, методические рекомендации по проведению мета-анализа на языке программирования R.</p>
-<p>            Учебное пособие предназначено для студентов лечебного, стоматологического, педиатрического факультетов и факультета клинической психологии, для студентов цифровой кафедры.
-Пособие может быть полезно клиническим ординаторам и аспирантам при статистической обработке большого объема информации, представления обобщенных клинических данных и их статистического анализа.</p>
-<p>ISBN</p>
-<p>©</p>
-<p>© РИЦ ПСПбГМУ, 2024</p>
+<div id="стат-пакет-в-r" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">4</span> Стат пакет в R<a href="стат-пакет-в-r.html#стат-пакет-в-r" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><strong>R</strong> - это язык программирования для статистических вычислений и графического представления информации, бесплатное программное обес
+Пользователи Windows и macOS могут скачать R на сайте CRAN (Comprehensive R Archive Network). Пользователи Linux и Unix могут установить пакеты R с помощью своего инструмента управления пакетами.</p>
+<div id="windows-1" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Windows<a href="стат-пакет-в-r.html#windows-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li><p>Перейдите на страницу <a href="http://www.r-project.org/" class="uri">http://www.r-project.org/</a> в своем браузере.</p></li>
+<li><p>Нажмите CRAN. Вы увидите список зеркал сайта, упорядоченных по странам.</p></li>
+<li><p>Выберите ближайший к вам сайт или самый первый указанный в верхней части списка (0-Cloud), который, как правило, хорошо работает для большинства ченных по странам.</p></li>
+<li><p>Выберите ближайший к вам сайт или самый первый указанный в верхней части списка (0-Cloud), который, как правило, хорошо работает для большинства местоположений.</p></li>
+<li><p>Нажмите Download R for (Mac) OS X (Скачать R для (Mac) OS X).</p></li>
+<li><p>Нажмите на файл .pkg для последней версии R в разделе Latest release (Последний выпуск), чтобы скачать его.</p></li>
+<li><p>По завершении загрузки дважды щелкните файл .pkg и ответьте на привычные вопросы.</p></li>
+</ol>
+<p>Для установки RStudio необходимо загрузить последнюю версию установщика для вашей платформы с сайта RStudio: (<a href="https://rstudio.com/products/rstudio/download/" class="uri">https://rstudio.com/products/rstudio/download/</a>). Версию RStudio Desktop с открытым исходным кодом можно скачать и использовать бесплатно.</p>
+<p><strong>Примечание:</strong></p>
+<p>Просмотр документации: <code>help.start()</code></p>
+<p>Быстрый вызов функции: <code>?mean</code></p>
+<p>Поиск текстового шаблона функции: <code>??mean</code></p>
 
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
+<a href="подключение-пактов-библиотек.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
-<a href="среда-r.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -176,7 +167,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/YOUR GITHUB USERNAME/YOUR REPO NAME/edit/main/index.Rmd",
+"link": "https://github.com/YOUR GITHUB USERNAME/YOUR REPO NAME/edit/main/03-stats.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -184,7 +175,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/YOUR GITHUB USERNAME/YOUR REPO NAME/blob/main/index.Rmd",
+"link": "https://github.com/YOUR GITHUB USERNAME/YOUR REPO NAME/blob/main/03-stats.Rmd",
 "text": null
 },
 "download": null,
