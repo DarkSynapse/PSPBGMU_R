@@ -3,5 +3,6 @@
 windows
 macos
 подключение-пактов-библиотек
+blbalbla
 стат-пакет-в-r
 windows-1
