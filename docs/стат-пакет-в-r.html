@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>5 Стат пакет в R | АНАЛИЗ БИОИНФОРМАЦИИ НА ЯЗЫКЕ R.</title>
-  <meta name="description" content="5 Стат пакет в R | АНАЛИЗ БИОИНФОРМАЦИИ НА ЯЗЫКЕ R." />
+  <title>5 Стат пакет в R | ВВЕДЕНИЕ В ЯЗЫК R: пакеты {dplyr}, {ggplot2}, {stats}</title>
+  <meta name="description" content="5 Стат пакет в R | ВВЕДЕНИЕ В ЯЗЫК R: пакеты {dplyr}, {ggplot2}, {stats}" />
   <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="5 Стат пакет в R | АНАЛИЗ БИОИНФОРМАЦИИ НА ЯЗЫКЕ R." />
+  <meta property="og:title" content="5 Стат пакет в R | ВВЕДЕНИЕ В ЯЗЫК R: пакеты {dplyr}, {ggplot2}, {stats}" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="5 Стат пакет в R | АНАЛИЗ БИОИНФОРМАЦИИ НА ЯЗЫКЕ R." />
+  <meta name="twitter:title" content="5 Стат пакет в R | ВВЕДЕНИЕ В ЯЗЫК R: пакеты {dplyr}, {ggplot2}, {stats}" />
   
   
   
@@ -30,7 +30,7 @@
   
   
 <link rel="prev" href="blbalbla.html"/>
-
+<link rel="next" href="статистические-критерии.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -149,8 +149,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4" data-path="blbalbla.html"><a href="blbalbla.html"><i class="fa fa-check"></i><b>4</b> blbalbla</a></li>
 <li class="chapter" data-level="5" data-path="стат-пакет-в-r.html"><a href="стат-пакет-в-r.html"><i class="fa fa-check"></i><b>5</b> Стат пакет в R</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="стат-пакет-в-r.html"><a href="стат-пакет-в-r.html#windows-1"><i class="fa fa-check"></i><b>5.1</b> Windows</a></li>
+<li class="chapter" data-level="5.0.1" data-path="стат-пакет-в-r.html"><a href="стат-пакет-в-r.html#количественные-данные"><i class="fa fa-check"></i><b>5.0.1</b> <strong>Количественные данные:</strong></a></li>
+<li class="chapter" data-level="5.0.2" data-path="стат-пакет-в-r.html"><a href="стат-пакет-в-r.html#качественные-данные"><i class="fa fa-check"></i><b>5.0.2</b> Качественные данные:</a></li>
 </ul></li>
+<li class="chapter" data-level="6" data-path="статистические-критерии.html"><a href="статистические-критерии.html"><i class="fa fa-check"></i><b>6</b> Статистические критерии</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Опубликовано с bookdown</a></li>
 <li><a href="https://www.1spbgmu.ru/" target="blank">Сайт ПСПбГМУ</a></li>
@@ -164,7 +166,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">АНАЛИЗ БИОИНФОРМАЦИИ НА ЯЗЫКЕ R.</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">ВВЕДЕНИЕ В ЯЗЫК R: пакеты {dplyr}, {ggplot2}, {stats}</a>
           </h1>
         </div>
 
@@ -174,32 +176,264 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="стат-пакет-в-r" class="section level1 hasAnchor" number="5">
 <h1><span class="header-section-number">5</span> Стат пакет в R<a href="стат-пакет-в-r.html#стат-пакет-в-r" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p><strong>R</strong> - это язык программирования для статистических вычислений и графического представления информации, бесплатное программное обес Пользователи Windows и macOS могут скачать R на сайте CRAN (Comprehensive R Archive Network). Пользователи Linux и Unix могут установить пакеты R с помощью своего инструмента управления пакетами.</p>
-<div id="windows-1" class="section level2 hasAnchor" number="5.1">
-<h2><span class="header-section-number">5.1</span> Windows<a href="стат-пакет-в-r.html#windows-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Биостатистика</strong> - это раздел статистики, который специализируется на сборе, анализе и интерпретации данных, связанных с биологическими и медицинскими исследованиями, используется для оценки различных аспектов здоровья, болезней, медицинских лечений и других биологических процессов.</p>
+<p>С помощью методов биомедицинской статистики можно выявить закономерности, провести статистические тесты, оценить риски и сделать выводы на основе данных.</p>
+<p>Биостатистический анализ представляет собой применение статистических методов к биологическим и медицинским данным. </p>
+<p>1. <strong>Определите цели и сформулируйте гипотезы</strong> перед началом анализа, что поможет выбрать правильные статистические методы.</p>
+<p>2. <strong>Выбор статистического метода</strong> определяется взависимости от исходных данных и сформулированных гипотез<strong>.</strong>  </p>
+<p><strong>Статистическая гипотеза</strong> – это предположение или утверждение о виде распределения и свойствах наблюдаемой выборки данных.</p>
+<p>Статистические гипотезы бывают двух типов:</p>
+<p>1. <strong>Нулевая гипотеза (H0)</strong> формулирует предположение о том, что никаких статистически значимых различий, эффектов или взаимосвязей в данных нет. H0 опровергается или отклоняется в ходе статистического анализа.</p>
+<p>2. <strong>Альтернативная гипотеза (H1)</strong> подтверждает гипотетический эффект, различие или взаимосвязь. Если результаты анализа данных позволяют отклонить нулевую гипотезу, то принимается альтернативная гипотеза.</p>
+<p>Примеры статистических гипотез:</p>
+<p>H0: Средний возраст пациентов в двух группах одинаков.</p>
+<p>H1: Средний возраст пациентов в двух группах различается.</p>
+<p>H0: Нет корреляции между уровнем образования и доходом.</p>
+<p>H1: Существует положительная корреляция между уровнем образования и доходом.</p>
+<p>H0: Эффект нового лекарства на заболеваемость не отличается от плацебо.</p>
+<p>H1: Новое лекарство снижает заболеваемость в большей степени, чем плацебо.</p>
+<p><strong>Уровень статистической значимости</strong> (альфа) - пороговое значение для отклонения нулевой гипотезы. В медицине принято выбирать альфа = 0,05 или альфа = 0,01, альфа = 0,001.</p>
+<p><strong>Статистический критерий</strong> – это случайная величина, которая служит для проверки статистических гипотез.</p>
+<p>Выбор статистических критериев зависит от <strong>типа данных</strong> в выборке и <strong>характера распределения.</strong></p>
+<p>Биомедицинские данные можно разделить на основные два типа: <strong>количественные</strong> <strong>(непрерывные и дискретные)</strong> и <strong>качественные</strong> <strong>(номинальные и порядковые)</strong> переменные.</p>
 <ol style="list-style-type: decimal">
-<li><p>Перейдите на страницу <a href="http://www.r-project.org/" class="uri">http://www.r-project.org/</a> в своем браузере.</p></li>
-<li><p>Нажмите CRAN. Вы увидите список зеркал сайта, упорядоченных по странам.</p></li>
-<li><p>Выберите ближайший к вам сайт или самый первый указанный в верхней части списка (0-Cloud), который, как правило, хорошо работает для большинства ченных по странам.</p></li>
-<li><p>Выберите ближайший к вам сайт или самый первый указанный в верхней части списка (0-Cloud), который, как правило, хорошо работает для большинства местоположений.</p></li>
-<li><p>Нажмите Download R for (Mac) OS X (Скачать R для (Mac) OS X).</p></li>
-<li><p>Нажмите на файл .pkg для последней версии R в разделе Latest release (Последний выпуск), чтобы скачать его.</p></li>
-<li><p>По завершении загрузки дважды щелкните файл .pkg и ответьте на привычные вопросы.</p></li>
+<li><p><strong>Количественные переменные</strong> (as.numeric(), as.integer()):</p>
+<ul>
+<li><p>Непрерывные переменные имеют бесконечное количество значений в заданном диапазоне и могут быть измерены с любой точностью. Примеры: возраст, вес, рост.</p></li>
+<li><p>Дискретные переменные имеют конечное или счетное количество значений и обычно представляют собой целые числа. Примеры: количество детей в семье, количество посещений врача в год.</p></li>
+</ul></li>
+<li><p><strong>Качественные переменные</strong> (as.character(), as.factor()):</p>
+<ul>
+<li><p>Номинальные переменные представляют собой категории или метки, которые не имеют упорядоченного значения. Примеры: пол, цвет глаз, страна рождения.</p></li>
+<li><p>Порядковые переменные также представляют категории, но у них есть упорядоченное значение. Примеры: образование (среднее, высшее, магистратура), уровень удовлетворенности (низкий, средний, высокий).</p></li>
+</ul></li>
 </ol>
-<p>Для установки RStudio необходимо загрузить последнюю версию установщика для вашей платформы с сайта RStudio: (<a href="https://rstudio.com/products/rstudio/download/" class="uri">https://rstudio.com/products/rstudio/download/</a>). Версию RStudio Desktop с открытым исходным кодом можно скачать и использовать бесплатно.</p>
-<p><strong>Примечание:</strong></p>
-<p>Просмотр документации: <code>help.start()</code></p>
-<p>Быстрый вызов функции: <code>?mean</code></p>
-<p>Поиск текстового шаблона функции: <code>??mean</code></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="стат-пакет-в-r.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Для установки основных пакетов</span></span>
-<span id="cb1-2"><a href="стат-пакет-в-r.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;BiocManager&quot;</span>) </span>
-<span id="cb1-3"><a href="стат-пакет-в-r.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">&quot;BiocManager&quot;</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb1-4"><a href="стат-пакет-в-r.html#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="стат-пакет-в-r.html#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Bioconductor введите: BiocManager::install(&quot;edgeR&quot;) или необходимо</span></span>
+<p><em>Проверить к какому типу относится переменная можно с помощью команды: class(таблица$столбик).</em></p>
+<p>Для выбора метода анализа данных необходимо знать характер их распределения.</p>
+<p><strong>Вероятность распределения</strong> - это концепция в статистике, которая отражает вероятности различных значений или событий в рамках определенного статистического распределения. Вероятность описывает, насколько вероятно возникновение определенных результатов или значений в данном распределении.</p>
+<p>Распределений существует большое количество, <strong>однако для нас важно является ли распределение нормальным или отличным от нормального.</strong></p>
+<p><strong>Алгоритм оценки распреденения:</strong></p>
+<p>1. Постройте графики данных, чтобы визуально оценить их распределение. Наиболее распространенными графическими методами являются <strong>гистограмма и QQ-график.</strong> Графики помогут вам определить, к какому типу распределения данные могут быть ближе.</p>
+<p>2. Используйте статистические тесты, такие как <strong>тест Шапиро-Уилка или тест Колмогорова-Смирнова,</strong> чтобы оценить, насколько данные соответствуют нормальному распределению. </p>
+<table style="width:92%;">
+<caption><strong>p-значение:</strong> это вероятность получить наблюдаемые результаты при условии, что нулевая гипотеза верна. Низкое p-значение (&lt;0.05) приводит к отклонению нулевой гипотезы (Н0), принимается альтернативная гипотеза (Н1).</caption>
+<colgroup>
+<col width="44%" />
+<col width="47%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>выборка &lt; 50</th>
+<th>выборка &gt; 50</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p><em>Критерий Шапиро-Уилка</em></p>
+<p>shapiro.test()</p></td>
+<td><p><em>Критерий Колмогорова-Смирнова</em></p>
+<p>ks.test()</p></td>
+</tr>
+<tr class="even">
+<td><p>гистограмма, QQ-тест</p>
+<p>geom_histogram + geom_density</p>
+<p>stat_qq() + stat_qq_line</p></td>
+<td><p>гистограмма, QQ-тест</p>
+<p>geom_histogram + geom_density</p>
+<p>stat_qq() + stat_qq_line</p></td>
+</tr>
+</tbody>
+</table>
+<p>Если принимается нулевая гипотеза (H0), то для описания выборки используют <strong>среднее значение и стандартное отклонение.</strong></p>
+<p>В случае принятия альтернативной гипотезы (H1) вычисляется <strong>медиана и стандартное отклонение.</strong></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="стат-пакет-в-r.html#cb1-1" aria-hidden="true" tabindex="-1"></a>Patient<span class="sc">$</span>height <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">120</span><span class="sc">:</span><span class="dv">170</span>, <span class="dv">15</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>) </span>
+<span id="cb1-2"><a href="стат-пакет-в-r.html#cb1-2" aria-hidden="true" tabindex="-1"></a>Patient<span class="sc">$</span>weight <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">60</span><span class="sc">:</span><span class="dv">75</span>,<span class="dv">15</span>,<span class="at">replace =</span> <span class="cn">TRUE</span>) </span>
+<span id="cb1-3"><a href="стат-пакет-в-r.html#cb1-3" aria-hidden="true" tabindex="-1"></a>Patient<span class="sc">$</span>age <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">30</span><span class="sc">:</span><span class="dv">39</span>, <span class="dv">15</span>,<span class="at">replace =</span> <span class="cn">TRUE</span>) </span>
+<span id="cb1-4"><a href="стат-пакет-в-r.html#cb1-4" aria-hidden="true" tabindex="-1"></a>Patient <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">age =</span> Patient<span class="sc">$</span>age,  </span>
+<span id="cb1-5"><a href="стат-пакет-в-r.html#cb1-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">weight =</span> Patient<span class="sc">$</span>weight, <span class="at">height =</span> Patient<span class="sc">$</span>height)</span>
 <span id="cb1-6"><a href="стат-пакет-в-r.html#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="стат-пакет-в-r.html#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;BiocManager&quot;</span>) </span>
-<span id="cb1-8"><a href="стат-пакет-в-r.html#cb1-8" aria-hidden="true" tabindex="-1"></a>BiocManager<span class="sc">::</span><span class="fu">install</span>(<span class="st">&quot;имя_пакета&quot;</span>)</span></code></pre></div>
-
+<span id="cb1-7"><a href="стат-пакет-в-r.html#cb1-7" aria-hidden="true" tabindex="-1"></a>Patient</span></code></pre></div>
+<p><em>Примеры распределений (для справки):</em></p>
+<ol style="list-style-type: decimal">
+<li><p><em>Нормальное распределение: Вероятность значений в нормальном распределении определяется кривой Гаусса, которая имеет пик вокруг среднего значения. Вероятность того, что случайная величина примет конкретное значение или попадет в интервал, можно вычислить с использованием функции плотности вероятности (PDF) или функции распределения (CDF).</em></p></li>
+<li><p><em>Биномиальное распределение: Это распределение используется для описания вероятностей успеха или неудачи в серии независимых экспериментов. Вероятность успешных и неуспешных исходов для заданного числа испытаний и вероятности успеха в каждом испытании определяются в биномиальном распределении.</em></p></li>
+<li><p><em>Равномерное распределение: Вероятности в равномерном распределении равномерно распределены в заданном диапазоне. Это означает, что все значения в диапазоне имеют одинаковую вероятность появления.</em></p></li>
+<li><p><em>Экспоненциальное распределение: Это распределение используется для моделирования времени между событиями. Вероятность того, что событие произойдет в определенный момент времени, уменьшается экспоненциально с увеличением времени.</em></p></li>
+<li><p><em>Гамма-распределение: Гамма-распределение используется для моделирования времени до наступления события, особенно в случаях, когда события происходят несколько раз.</em></p></li>
+<li><p><em>Пуассоновское распределение: Это распределение используется для описания числа событий, произошедших в фиксированном временном интервале или пространственной области.</em></p></li>
+</ol>
+<div id="количественные-данные" class="section level3 hasAnchor" number="5.0.1">
+<h3><span class="header-section-number">5.0.1</span> <strong>Количественные данные:</strong><a href="стат-пакет-в-r.html#количественные-данные" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<table>
+<colgroup>
+<col width="15%" />
+<col width="25%" />
+<col width="38%" />
+<col width="20%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>группы</td>
+<td>нормальное распределение</td>
+<td>отличное от нормального распределения</td>
+<td>{ggplot2}</td>
+</tr>
+<tr class="even">
+<td>2 независимые</td>
+<td>t-test<br />
+t.test(paired =  FALSE)</td>
+<td>Тест Манна-Уитни<br />
+wilcox.test(paired =  FALSE)</td>
+<td>диаграмма размаха<br />
+geom_boxplot()</td>
+</tr>
+<tr class="odd">
+<td>2 связанные</td>
+<td>t-test<br />
+t.test(paired =  TRUE)</td>
+<td>Критерий Уилкоксона<br />
+wilcox.test(paired =  TRUE</td>
+<td>диаграмма размаха<br />
+geom_bar()</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="качественные-данные" class="section level3 hasAnchor" number="5.0.2">
+<h3><span class="header-section-number">5.0.2</span> Качественные данные:<a href="стат-пакет-в-r.html#качественные-данные" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<table>
+<colgroup>
+<col width="18%" />
+<col width="42%" />
+<col width="39%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>группы</td>
+<td>нормальное распределение</td>
+<td>{ggplot2}</td>
+</tr>
+<tr class="even">
+<td>2 независимые</td>
+<td><p>Критерий хи-квадрат chisq.test()</p>
+<p>Критерий Фишера</p></td>
+<td>столбчатая диаграмма geom_bar()</td>
+</tr>
+<tr class="odd">
+<td>2 связанные</td>
+<td>Критерий Мак-Немара mcnemar.test()</td>
+<td>столбчатая диаграмма geom_bar()</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Нормальность распределения:</strong></p>
+<table style="width:89%;">
+<colgroup>
+<col width="44%" />
+<col width="44%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>выборка &lt; 50</td>
+<td>выборка &gt; 50</td>
+</tr>
+<tr class="even">
+<td><p>Критерий Шапиро-Уилка</p>
+<p>shapiro.test()</p></td>
+<td><p>Критерий Колмогорова-Смирнова</p>
+<p>ks.test()</p></td>
+</tr>
+<tr class="odd">
+<td><p>гистограмма, QQ-тест</p>
+<p>geom_histogram + geom_density</p>
+<p>stat_qq() + stat_qq_line</p></td>
+<td><p>гистограмма, QQ-тест</p>
+<p>geom_histogram + geom_density</p>
+<p>stat_qq() + stat_qq_line</p></td>
+</tr>
+</tbody>
+</table>
+<p>В R есть несколько встроенных наборов данных. Эти наборы данных полезны для практики в построении моделей, визуализации и других операциях с данными.</p>
+<p><em>Пример</em>: Даны данные длины зубов у 60 морских свинок (<strong>ToothGrowth</strong>). Всем свинкам давали витамин С в виде апельсинового сока или аскорбиновой кислоты. Каждое животное получало одну их 3х доз витамина С (0.5, 1 или 2 мг/сут). Рассмотрим влияние витамина С на рост зубов у морских свинок.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="стат-пакет-в-r.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Загрузка данных</span></span>
+<span id="cb2-2"><a href="стат-пакет-в-r.html#cb2-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> ToothGrowth</span>
+<span id="cb2-3"><a href="стат-пакет-в-r.html#cb2-3" aria-hidden="true" tabindex="-1"></a>data1 <span class="ot">&lt;-</span> <span class="fu">subset</span>(data,supp<span class="sc">==</span><span class="st">&quot;VC&quot;</span>)</span>
+<span id="cb2-4"><a href="стат-пакет-в-r.html#cb2-4" aria-hidden="true" tabindex="-1"></a>data2 <span class="ot">&lt;-</span> <span class="fu">subset</span>(data,supp<span class="sc">==</span><span class="st">&quot;OJ&quot;</span>)</span>
+<span id="cb2-5"><a href="стат-пакет-в-r.html#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">shapiro.test</span>(data1<span class="sc">$</span>len)</span></code></pre></div>
+<pre><code>## 
+##  Shapiro-Wilk normality test
+## 
+## data:  data1$len
+## W = 0.96567, p-value = 0.4284</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="стат-пакет-в-r.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Загрузка данных</span></span>
+<span id="cb4-2"><a href="стат-пакет-в-r.html#cb4-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> ToothGrowth</span>
+<span id="cb4-3"><a href="стат-пакет-в-r.html#cb4-3" aria-hidden="true" tabindex="-1"></a>data2 <span class="ot">&lt;-</span> <span class="fu">subset</span>(data,supp<span class="sc">==</span><span class="st">&quot;OJ&quot;</span>)</span>
+<span id="cb4-4"><a href="стат-пакет-в-r.html#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">shapiro.test</span>(data2<span class="sc">$</span>len)</span></code></pre></div>
+<pre><code>## 
+##  Shapiro-Wilk normality test
+## 
+## data:  data2$len
+## W = 0.91784, p-value = 0.02359</code></pre>
+<table>
+<tbody>
+<tr class="odd">
+<td></td>
+<td>VC</td>
+<td>OJ</td>
+</tr>
+<tr class="even">
+<td>p-value</td>
+<td>0.43 &gt; 0.05</td>
+<td>0.024 &lt; 0.05</td>
+</tr>
+<tr class="odd">
+<td>среднее значение</td>
+<td>16.96</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>стандартное отклонение</td>
+<td>8.27</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>медиана</td>
+<td></td>
+<td>22.7</td>
+</tr>
+<tr class="even">
+<td>квартили</td>
+<td></td>
+<td>15.53; 25.73</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="стат-пакет-в-r.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Загрузка данных</span></span>
+<span id="cb6-2"><a href="стат-пакет-в-r.html#cb6-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> ToothGrowth</span>
+<span id="cb6-3"><a href="стат-пакет-в-r.html#cb6-3" aria-hidden="true" tabindex="-1"></a>data1 <span class="ot">&lt;-</span> <span class="fu">subset</span>(data,supp<span class="sc">==</span><span class="st">&quot;VC&quot;</span>)</span>
+<span id="cb6-4"><a href="стат-пакет-в-r.html#cb6-4" aria-hidden="true" tabindex="-1"></a>data2 <span class="ot">&lt;-</span> <span class="fu">subset</span>(data,supp<span class="sc">==</span><span class="st">&quot;OJ&quot;</span>)</span>
+<span id="cb6-5"><a href="стат-пакет-в-r.html#cb6-5" aria-hidden="true" tabindex="-1"></a>result_norm1 <span class="ot">&lt;-</span> <span class="fu">shapiro.test</span>(data1<span class="sc">$</span>len)</span>
+<span id="cb6-6"><a href="стат-пакет-в-r.html#cb6-6" aria-hidden="true" tabindex="-1"></a>result_norm2 <span class="ot">&lt;-</span> <span class="fu">shapiro.test</span>(data2<span class="sc">$</span>len)</span>
+<span id="cb6-7"><a href="стат-пакет-в-r.html#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="стат-пакет-в-r.html#cb6-8" aria-hidden="true" tabindex="-1"></a>test_1 <span class="ot">&lt;-</span> <span class="cf">function</span>(x1,x2) {</span>
+<span id="cb6-9"><a href="стат-пакет-в-r.html#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (x2 <span class="sc">&gt;</span> <span class="fl">0.05</span>) {</span>
+<span id="cb6-10"><a href="стат-пакет-в-r.html#cb6-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">&#39;mean = &#39;</span>,<span class="fu">mean</span>(x1))</span>
+<span id="cb6-11"><a href="стат-пакет-в-r.html#cb6-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb6-12"><a href="стат-пакет-в-r.html#cb6-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">&#39;sd = &#39;</span>, <span class="fu">sd</span>(x1))</span>
+<span id="cb6-13"><a href="стат-пакет-в-r.html#cb6-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb6-14"><a href="стат-пакет-в-r.html#cb6-14" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
+<span id="cb6-15"><a href="стат-пакет-в-r.html#cb6-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">&#39;median = &#39;</span>, <span class="fu">median</span>(x1))</span>
+<span id="cb6-16"><a href="стат-пакет-в-r.html#cb6-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb6-17"><a href="стат-пакет-в-r.html#cb6-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">&#39;quant = &#39;</span>, <span class="fu">quantile</span>(x1))</span>
+<span id="cb6-18"><a href="стат-пакет-в-r.html#cb6-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb6-19"><a href="стат-пакет-в-r.html#cb6-19" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb6-20"><a href="стат-пакет-в-r.html#cb6-20" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-21"><a href="стат-пакет-в-r.html#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="fu">test_1</span>(data1<span class="sc">$</span>len,result_norm1<span class="sc">$</span>p.value)</span></code></pre></div>
+<pre><code>## mean =  16.96333
+## sd =  8.266029</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="стат-пакет-в-r.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">test_1</span>(data2<span class="sc">$</span>len,result_norm2<span class="sc">$</span>p.value) </span></code></pre></div>
+<pre><code>## median =  22.7
+## quant =  8.2 15.525 22.7 25.725 30.9</code></pre>
 </div>
 </div>
             </section>
@@ -207,8 +441,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="blbalbla.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="blbalbla.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="статистические-критерии.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -239,7 +473,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/YOUR GITHUB USERNAME/YOUR REPO NAME/edit/main/05-dplyr.Rmd",
+"link": "https://github.com/YOUR GITHUB USERNAME/YOUR REPO NAME/edit/main/06-stats.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -247,7 +481,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/YOUR GITHUB USERNAME/YOUR REPO NAME/blob/main/05-dplyr.Rmd",
+"link": "https://github.com/YOUR GITHUB USERNAME/YOUR REPO NAME/blob/main/06-stats.Rmd",
 "text": null
 },
 "download": null,
