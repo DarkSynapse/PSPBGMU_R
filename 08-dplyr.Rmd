@@ -1,0 +1,13 @@
+---
+title: "ВВЕДЕНИЕ В ЯЗЫК R: пакеты dplyr, ggplot2, stats"
+author: "М.Л. Никонорова, А.В. Тишков, Н.П. Волков."
+site: bookdown::bookdown_site
+output: pdf_document
+editor_options:
+  markdown:
+    wrap: sentence
+---
+
+# Пакет dplyr
+
+Библиотека для анализа и обработки данных

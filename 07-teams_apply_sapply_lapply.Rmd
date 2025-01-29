@@ -1,0 +1,64 @@
+---
+title: "ВВЕДЕНИЕ В ЯЗЫК R: пакеты dplyr, ggplot2, stats"
+author: "М.Л. Никонорова, А.В. Тишков, Н.П. Волков."
+site: bookdown::bookdown_site
+output: pdf_document
+editor_options:
+  markdown:
+    wrap: sentence
+---
+
+# Команды apply(), sapply(), lapply()
+
+## 📚 **apply()**
+
+Применяет любую функцию к строке или столбцу таблицы данных (data.frame) или матрицы.
+
+**apply(data_frame,index,Fun=)**, где\
+\
+data_frame -- имя таблицы данных\
+index -- принимает значение 1 (функция применяется к строкам) ии значение 2 (функция применяется к столбцам)\
+Fun -- имя функции, например, sum или function(d) d\^2+d
+
+```{r women}
+apply(women,2,mean)
+```
+
+## 📚 sapply()
+
+Применяется аналогично apply(), но только к векторам и спискам.
+Позволяет избежать создания циклов.
+
+**sapply(data_Fun, simplify=TRUE, USE.NAMES = TRUE)**, где\
+\
+data_frame -- имя таблицы данных\
+Fun -- имя функции, например, sum или function(d) d\^2+d\
+simplify = TRUE по умолчанию, логический аргумент, говорит о выводе результата в виде вектора\
+USE.NAMES = TRUE по умолчанию, логический аргумент, говорит о том, что в качестве названий выводимых результатов используется data_frame.
+
+```{r}
+x <- list(a = 1:10, beta = exp(1:3), logic = c(TRUE,FALSE,TRUE,FALSE))
+sapply(x, quantile)
+```
+
+## 📚 lapply()
+
+Аналогична sapply(), но работает со списками
+
+**lapply(data_Fun, simplify=TRUE, USE.NAMES = FALSE)**, где\
+\
+data_frame -- имя таблицы данных\
+Fun -- имя функции, например, sum или function(d) d\^2+d\
+simplify = TRUE по умолчанию, логический аргумент, говорит о выводе результата в виде вектора\
+USE.NAMES = FALSE по умолчанию, логический аргумент, говорит о том, что в качестве названий выводимых результатов используется list.
+
+```{r}
+x <- list(a = 1:10, beta = exp(1:3), logic = c(TRUE,FALSE,TRUE,FALSE))
+lapply(x, length)   # возвращает длины элементов списков
+
+```
+
+```{r}
+x <- women$weight
+lapply(women,function(x) (x/100)^2)
+```
